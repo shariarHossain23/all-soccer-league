@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Showleague from '../Showleague/Showleague';
+import './League.css';
 
 const League = () => {
     const [leagues,setLeagues] = useState([]);
@@ -9,11 +10,12 @@ const League = () => {
         .then(data => setLeagues(data.leagues))
     },[])
     return (
-        <div>
-            <h1>Hello</h1>
-            {
+        <div >
+            <h1>ALl league</h1>
+           <div className='leagues'> {
                 leagues.map(league => <Showleague league ={league} key={league.idLeague}></Showleague>)
             }
+            </div>
         </div>
     );
 };
